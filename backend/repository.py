@@ -7,13 +7,11 @@ class TaskRepository:
     async def add_one(cls, data: TaskAdd) -> int:
         async with new_session() as session:
             task_dict = data.model_dump()
-
+            
             task = TasksTable(**task_dict)
             session.add(task)
-            await session.flush()
-            await session.commit()
+            await session.commit() 
             return task.id
-
 
     @classmethod
     async def find_all(cls) -> list[Task]:
@@ -21,5 +19,5 @@ class TaskRepository:
             query = select(TasksTable)
             result = await session.execute(query)
             task_models = result.scalars().all()
-            task_schemas = [Task.model_validate(task_models) for task in task_models]
-            return task_models
+            task_schemas = [Task.model_validate(task_model) for task_model in task_models]
+            return task_schemas

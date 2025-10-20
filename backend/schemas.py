@@ -1,5 +1,6 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional
+import datetime
 
 class TaskAdd(BaseModel):
     name: str
@@ -7,6 +8,9 @@ class TaskAdd(BaseModel):
 
 class Task(TaskAdd):
     id: int
+    created_at: datetime.datetime
+
+    model_config = ConfigDict(from_attributes=True)
 
 
 class TaskId(BaseModel):
