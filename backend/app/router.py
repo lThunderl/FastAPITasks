@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 from typing import List
-from repository import TaskAdd, TaskRepository
+from backend.app.repository import TaskAdd, TaskRepository
 from schemas import Task, TaskId
 
 router = APIRouter(

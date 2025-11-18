@@ -1,4 +1,4 @@
-from database import new_session, TasksTable
+from backend.database.database import new_session, TasksTable
 from schemas import TaskAdd, Task
 from sqlalchemy import select
 

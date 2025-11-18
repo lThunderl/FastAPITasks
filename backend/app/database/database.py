@@ -3,15 +3,11 @@ from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from typing import Optional
 from sqlalchemy import DateTime
 import datetime
-import os
+from app.utils import Settings
 
-POSTGRES_USER = os.getenv("POSTGRES_USER", "postgres")
-POSTGRES_PASSWORD = os.getenv("POSTGRES_PASSWORD", 'password')
-POSTGRES_HOST = os.getenv("POSTGRES_HOST", 'localhost')
-POSTGRES_PORT = os.getenv("POSTGRES_PORT", '5432')
-POSTGRES_DB = os.getenv("POSTGRES_DB", 'tasks_db')
+settings = Settings()
 
-DATABASE_URL = f"postgresql+asyncpg://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:{POSTGRES_PORT}/{POSTGRES_DB}"
+DATABASE_URL = f"postgresql+asyncpg://{settings.DB_USERNAME}:{settings.DB_PASSWORD}@{settings.DB_HOST}:{settings.DB_PORT}/{settings.DB_NAME}"
 
 engine = create_async_engine(
     DATABASE_URL,
