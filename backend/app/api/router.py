@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from typing import List
-from backend.app.repository import TaskAdd, TaskRepository
-from schemas import Task, TaskId
+from app.repositories import TaskAdd, TaskRepository
+from app.schemas import Task, TaskId
 
 router = APIRouter(
     prefix="/tasks",

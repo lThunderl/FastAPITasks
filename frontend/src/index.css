@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #2e2e2e, #d3d3d3);
   min-height: 100vh;
   color: #333;
 }
@@ -21,7 +21,6 @@ body {
   padding: 20px;
 }
 
-/* Заголовок */
 .header {
   text-align: center;
   margin-bottom: 40px;
@@ -33,7 +32,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* Основной контент */
 .main-content {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -47,15 +45,12 @@ body {
   }
 }
 
-/* Карточки */
 .card {
   background: white;
   border-radius: 12px;
   padding: 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-/* Форма */
 .task-form {
   display: flex;
   flex-direction: column;
@@ -117,6 +112,7 @@ body {
   background: #f8f9fa;
   color: #333;
   border: 2px solid #e1e5e9;
+  margin-left: 308px;
 }
 
 .btn-secondary:hover {

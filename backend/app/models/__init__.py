@@ -1,2 +1,2 @@
-from .base import Base
-from .tasks import Tasks
+from .base import *
+from .tasks import *

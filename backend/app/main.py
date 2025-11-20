@@ -1,7 +1,5 @@
 from fastapi import FastAPI
-from contextlib import asynccontextmanager
-from backend.app.database.database import create_tables, delete_tables
-from backend.app.router import router as tasks_router
+from app.api.router import router
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Tasks API", version="1.0.0")
@@ -17,7 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(tasks_router)
+app.include_router(router)
 
 @app.get("/")
 async def root():
