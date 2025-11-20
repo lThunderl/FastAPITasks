@@ -42,3 +42,7 @@ cd FastAPITasks
 
 # 2. Запустите сборку и запуск контейнеров
 docker compose up -d --build
+
+🌐 Фронтенд: http://localhost:3000
+🐍 Бэкенд: http://localhost:80/docs (Swagger)
+🔽 PostgreSQL: localhost:5432, имя БД: taskdb
